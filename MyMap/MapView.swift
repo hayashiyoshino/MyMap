@@ -8,6 +8,12 @@
 import SwiftUI
 import MapKit
 
+enum MapType {
+    case standard  // 標準
+    case satellite // 衛生写真
+    case hybrid    // 衛生写真＋交通機関ラベル
+}
+
 struct MapView: UIViewRepresentable {
     // 検索キーワード
     let searchKey: String
