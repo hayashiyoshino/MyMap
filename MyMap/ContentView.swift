@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var inputText: String = ""
     // 検索キーワードを保持する状態変数
     @State var displaySearchKey: String = ""
+    // マップ種類 デフォルトは標準
+    @State var displayMapType: MapType = .standard
     
     var body: some View {
         VStack {
