@@ -26,7 +26,11 @@ struct ContentView: View {
                 }
             // 余白を追加
                 .padding()
-            MapView(searchKey: displaySearchKey)
+            // 奥から手前方向にレイアウト(右下基準で配置)
+            ZStack(alignment: .bottomTrailing) {
+                // マップを表示
+                MapView(searchKey: displaySearchKey)
+            }
         }
     }
 }
