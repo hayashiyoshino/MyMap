@@ -17,6 +17,8 @@ enum MapType {
 struct MapView: UIViewRepresentable {
     // 検索キーワード
     let searchKey: String
+    // マップ種類
+    let mapType: MapType
     
     // 表示する View を作成する時に実行
     func makeUIView(context: Context) -> MKMapView {

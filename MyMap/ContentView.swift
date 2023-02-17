@@ -29,7 +29,7 @@ struct ContentView: View {
             // 奥から手前方向にレイアウト(右下基準で配置)
             ZStack(alignment: .bottomTrailing) {
                 // マップを表示
-                MapView(searchKey: displaySearchKey)
+                MapView(searchKey: displaySearchKey, mapType: displayMapType)
                 
                 // マップ切り替えボタン
                 Button {
