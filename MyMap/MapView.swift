@@ -30,6 +30,18 @@ struct MapView: UIViewRepresentable {
     func updateUIView(_ uiView: MKMapView, context: Context) {
         print("検索キーワード：\(searchKey)")
         
+        switch mapType {
+        case .standard:
+            // 標準
+            uiView.preferredConfiguration = MKStandardMapConfiguration(elevationStyle: .flat)
+        case .satellite:
+            // 衛生写真
+            uiView.preferredConfiguration = MKImageryMapConfiguration()
+        case .hybrid:
+            // 衛生写真＋交通機関ラベル
+            uiView.preferredConfiguration = MKHybridMapConfiguration()
+        }
+        
         // CLGeocoderインスタンスを生成
         let geocoder = CLGeocoder()
         
@@ -74,6 +86,6 @@ struct MapView: UIViewRepresentable {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(searchKey: "羽田空港")
+        MapView(searchKey: "羽田空港", mapType: .standard)
     }
 }
